@@ -10,7 +10,8 @@ export class CartComponent implements OnInit {
   bolt:boolean=true;
   gift:boolean=true;
   paypal:boolean=true;
-
+  affirm:boolean=true;
+ 
   constructor() { }
 
   ngOnInit() {
@@ -22,13 +23,15 @@ export class CartComponent implements OnInit {
   }
 
   giftCheckout(){
-    //COMPLETE THIS FUNCTION
-    // This function toggles the Gift Card overlay
+    this.gift = !this.gift;
   }
 
   paypalCheckout(){
-    //COMPLETE THIS FUNCTION
-    // This function toggles the paypal overlay
+    this.paypal = !this.paypal;
+  }
+
+  affirmCheckout(){
+    this.affirm = !this.affirm;
   }
 
   termsFunc(){

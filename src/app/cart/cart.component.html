@@ -4,25 +4,25 @@
 
 
 <div class="checkbox">
-  <input (click)="termsFunc()" type="checkbox" name="terms" id="terms_and_conditions_input" value="terms"><span>Please agree to the final sale terms!</span><br>
+    <input (click)="termsFunc()" type="checkbox" name="terms" id="terms_and_conditions_input" value="terms"><span>Please agree to the final sale terms!</span><br>
 </div>
 
 
 <div [ngClass]="{'hide': bolt}" class="bolt-checkout-container">
     <div class="exit">
         <span (click)="boltCheckout()">x</span>
-      </div>
+    </div>
     <div class="container-text">
-      <p>Bolt Checkout</p>
+        <p>Bolt Checkout</p>
     </div>
 </div>
 
 <div [ngClass]="{'hide': paypal}" class="bolt-checkout-container">
     <div class="exit">
         <span (click)="paypalCheckout()">x</span>
-      </div>
+    </div>
     <div class="container-text">
-      <p>PayPal Checkout</p>
+        <p>PayPal Checkout</p>
     </div>
 </div>
 
@@ -31,20 +31,30 @@
         <span (click)="giftCheckout()">x</span>
     </div>
     <div class="container-text">
-      <p>Gift Checkout</p>
+        <p>Gift Checkout</p>
+    </div>
+</div>
+
+<div [ngClass]="{'hide': affirm}" class="bolt-checkout-container">
+    <div class="exit">
+        <span (click)="affirmCheckout()">x</span>
+    </div>
+    <div class="container-text">
+        <p>Affirm Checkout</p>
     </div>
 </div>
 
 <div class="cart-container">
-  <div class="cart">
-      <div class="item image"><img src="../../assets/sneaker_1.jpg" alt=""></div>
-      <div class="item description">product</div>
-      <div class="item quantity">1</div>
-      <div class="item price">$52.99</div>
-      <div (click)="alertUser()" class="checkout-buttons">
-          <button (click)="boltCheckout()" id="bolt-checkout-btn" class="checkout-btn">Bolt</button>
-          <button (click)="paypalCheckout()" id="paypal-checkout-btn" class="checkout-btn">Paypal</button>
-          <button (click)="giftCheckout()" id="gift-checkout-btn" class="checkout-btn">Gift Card</button>
-      </div>
-  </div>
+    <div class="cart">
+        <div class="item image"><img src="../../assets/sneaker_1.jpg" alt=""></div>
+        <div class="item description">product</div>
+        <div class="item quantity">1</div>
+        <div class="item price">$52.99</div>
+        <div (click)="alertUser()" class="checkout-buttons">
+            <button (click)="boltCheckout()" id="bolt-checkout-btn" class="checkout-btn">Bolt</button>
+            <button (click)="paypalCheckout()" id="paypal-checkout-btn" class="checkout-btn">Paypal</button>
+            <button (click)="giftCheckout()" id="gift-checkout-btn" class="checkout-btn">Gift Card</button>
+            <button (click)="affirmCheckout()" id="affirm-checkout-btn" class="checkout-btn">Affirm</button>
+        </div>
+    </div>
 </div>
