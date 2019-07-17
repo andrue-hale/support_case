@@ -11,46 +11,53 @@ export class CartComponent implements OnInit {
   gift:boolean=true;
   paypal:boolean=true;
   affirm:boolean=true;
+  checkboxClicked:boolean=false;
  
   constructor() { }
 
   ngOnInit() {
-    //This would be a good place to initialize DOM Variables and/or functions
   }
 
   boltCheckout(){
-    this.bolt = !this.bolt;
+    if (this.checkboxClicked == true) {
+      this.bolt = !this.bolt;
+    }
   }
 
   giftCheckout(){
-    this.gift = !this.gift;
+    if (this.checkboxClicked == true) {
+      this.gift = !this.gift;
+    }
   }
 
   paypalCheckout(){
-    this.paypal = !this.paypal;
+    if (this.checkboxClicked == true) {
+      this.paypal = !this.paypal;
+    }
   }
 
   affirmCheckout(){
-    this.affirm = !this.affirm;
+    if (this.checkboxClicked == true) {
+      this.affirm = !this.affirm;
+    }
   }
 
   termsFunc(){
-    //COMPLETE THIS FUNCTION
-    //This function is ran when a user selects the final sale checkbox
+    this.checkboxClicked = !this.checkboxClicked;
   }
 
   enableCheckout(){
-    //COMPLETE THIS FUNCTION
-    // This function enables the checkout buttons when a condition is met
+    // This method was not needed. 
   }
 
   disableCheckout(){
-    //COMPLETE THIS FUNCTION
-    // This disables the checkout buttons when a condition isn't met
+    // This method was not needed. 
   }
 
   alertUser(){
-    //COMPLETE THIS FUNCTION
-    // This function needs to alert the user when try to click one of the checkout buttons without agreeing to the terms.
+    if(this.checkboxClicked == false) {
+      alert("Please agree to the final sale terms!");
+    }
   }
+
 }
